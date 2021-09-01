@@ -4,12 +4,11 @@ import Collection from "../components/Grimoire/Collection"
 import { UserGrimoire } from "../apiType"
 
 export default function Grimoire(props:Props):JSX.Element {
-  console.log(import.meta.env.BASE_URL.length)
   return (
     <>
       {props.isLoaded ?
         <h3>Score : {props.myGrimoire.score} points</h3>
-      : <h3>Entrez un ID PSN</h3>}
+      : <h3>Entrez un pseudo</h3>}
       <Filters
         showAdvanced={props.showAdvanced}
         filter={props.filter}

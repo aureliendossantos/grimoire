@@ -11,7 +11,7 @@ Currently, you can:
 - [x] Browse the entire Grimoire
 - [ ] Change the language (currently in French) (Note: I can then use `<div lang="fr">`)
 - [ ] Filter cards per collection (`Vanguard/Grimoire/Definition/`)
-- [x] Enter a PlayStation (soon Xbox) username to see:
+- [x] Enter a PlayStation or Xbox username to see:
     - [x] Your total Grimoire score
     - [x] Your unlocked cards, and those you have left to unlock
     - [x] Your stats per card and their associated bonuses
@@ -22,7 +22,7 @@ Currently, you can:
 
 - [ ] Improve the design
     - [ ] Stat gauges
-    - [ ] Fonts
+    - [x] Fonts
     - [ ] Nicer CSS
     - [ ] Add a favicon
     - [ ] Add meta tags to `<head>`
@@ -62,7 +62,7 @@ Card properties are documented in `apiType.ts`.
 
 ### User Cards
 
-To get a user's card collection, query `Vanguard/Grimoire/{membershipType}/{accountId}/` then go to the property `.Response.data.cardCollection`.
+To get a user card collection, query `Vanguard/Grimoire/{membershipType}/{accountId}/` then go to the property `.Response.data.cardCollection`.
 
 ### Bonuses
 

@@ -17,7 +17,7 @@ export default function FullCard(props: Props): JSX.Element {
   const bonus = getCardBonus(cardId, props.bonuses)
   return (
     <>
-      <Link to="/">Retour à l'accueil</Link>
+      <p><Link to="/"><button>Retour à l'accueil</button></Link></p>
       <div style={cardImageStyle(card.normalResolution.image)}></div>
       <h3 dangerouslySetInnerHTML={{__html:card.cardName}}></h3>
       {card.cardIntro ?

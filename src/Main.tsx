@@ -10,8 +10,9 @@ import Debug from './pages/Debug'
 import NotFound from './pages/NotFound'
 
 export default function Main():JSX.Element {
-  const [username, setUsername] = useState('')
-  const [accountID, setAccountID] = useState('')
+  const [username, setUsername] = useState("")
+  const [platform, setPlatform] = useState("psn")
+  const [accountID, setAccountID] = useState("")
   const [showAdvanced, setShowAdvanced] = useState(false)
   const [filter, setFilter] = useState("all")
   const [grimoireDefinition, setGrimoireDefinition] = useState([])
@@ -28,7 +29,8 @@ export default function Main():JSX.Element {
     (async () => {
       try {
         if (username != '') {
-          const response = await fetch(host + '2/Stats/GetMembershipIdByDisplayName/' + username + '/', {headers: {'X-API-Key': config.apiKey}})
+          const response = await fetch(host + (platform == "xbox" ? '1' : '2') + '/Stats/GetMembershipIdByDisplayName/' + username + '/', {headers: {'X-API-Key': config.apiKey}})
+          console.log(host + (platform == "xbox" ? '1' : '2') + '/Stats/GetMembershipIdByDisplayName/' + username + '/')
           const data = await response.json()
           setAccountID(data.Response)
         }
@@ -58,8 +60,10 @@ export default function Main():JSX.Element {
     <div>
       <UserForm
         username={username}
-        onSubmit={(userInput) => {
-          setUsername(userInput)
+        platform={platform}
+        onSubmit={(username, platform) => {
+          setUsername(username)
+          setPlatform(platform)
         }}
       />
       <Router>
