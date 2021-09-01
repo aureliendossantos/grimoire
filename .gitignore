@@ -1,0 +1,9 @@
+node_modules
+bower_components
+.DS_*
+dist
+dist-ssr
+*.local
+*.sublime*
+
+grimoire-config.json

@@ -1,0 +1,8 @@
+[build]
+  publish = "dist"
+  command = "bash create-config.sh $BUNGIE_API_KEY && yarn build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

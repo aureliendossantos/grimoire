@@ -1,0 +1,57 @@
+body {
+    background-color: black;
+    color: rgb(226, 226, 226);
+    font-family: "Neue Haas Grotesk W01 Disp", "Neue Haas Grotesk", "Helvetica Neue", "Arial", sans-serif;
+}
+
+ul.grimoire {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+ul.grimoire li {
+    list-style: none;
+    margin: 3px;
+    display: flex;
+    position: relative;
+}
+
+ul.grimoire li div.content {
+    padding: 10px 20px;
+    align-self: flex-end;
+    text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5), 0 0 0.1em rgba(0, 0, 0, 0.5);
+}
+
+ul.grimoire li div.content h3 {
+    margin-bottom: 0.5em;
+}
+
+ul.grimoire li div.content p {
+    margin-top: 0.5em;
+}
+
+ul.grimoire li div.content ul {
+    padding: 0;
+}
+
+ul.grimoire li div.content ul {
+    padding: 0;
+}
+
+ul.grimoire li {
+    z-index: 1;
+}
+
+ul.grimoire li a::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: ' ';
+}
+
+.unlockHowToText {
+    font-style: italic;
+}
