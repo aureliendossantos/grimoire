@@ -8,7 +8,9 @@ export default function Debug() {
 
   useEffect(() => {
     (async () => {try {
-        const response = await fetch(host + 'Manifest/', {headers: {'X-API-Key': config.apiKey}})
+        // const url = host + 'Vanguard/Grimoire/Definition/'
+        const url = host + 'Manifest/'
+        const response = await fetch(url, {headers: {'X-API-Key': config.apiKey}})
         if (response.ok) {
           const data = await response.json()
           setResult(data)

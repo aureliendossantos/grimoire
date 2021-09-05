@@ -7,6 +7,10 @@ body {
     margin: 0.5em;
 }
 
+a {
+    color: inherit
+}
+
 ul.grimoire {
     display: flex;
     flex-wrap: wrap;
@@ -125,6 +129,7 @@ button {
 
 .radio label:last-of-type {
     border-radius: 0 4px 4px 0;
+    margin-right: 0.5em;
 }
 
 .radio input:not(:checked) + label:hover, input[type=checkbox] + label:hover, button:hover {
@@ -137,4 +142,54 @@ button {
 
 input[type=checkbox]:checked + label {
     background-color: #37a03c;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 4px;
+    background-color: rgb(51, 59, 83);
+}
+th, td {
+    text-align: left;
+    padding: 0.5em;
+}
+
+td.link {
+    position: relative;
+    background-color: rgb(32, 38, 58);
+}
+
+td.link a::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: ' ';
+}
+
+details {
+    background-color: rgb(32, 38, 58);
+    border-radius: 4px;
+    padding: .5em .5em 0;
+    margin-bottom: .5em;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] > summary {
+    margin-bottom: .5em;
+    background-color: rgb(38, 65, 61);
+}
+
+details details[open] {
+    background-color: rgb(9, 10, 17);
 }

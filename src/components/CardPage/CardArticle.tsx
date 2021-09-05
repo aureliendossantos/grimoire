@@ -1,14 +1,13 @@
 import React from "react"
-import {Link} from "react-router-dom"
 import {getUserCardFromCollection, getCardBonus, cardImageStyle} from "../../helpers"
-import frDefinition from "../../DestinyGrimoireCardDefinition-fr.json"
-import enDefinition from "../../DestinyGrimoireCardDefinition-en.json"
+import frCardDefinition from "../../GrimoireCardDefinition-fr.json"
+import enCardDefinition from "../../GrimoireCardDefinition-en.json"
 import Stats from "./Stats"
-import { Card, Bonus, GrimoireCardDefinition } from "../../apiType"
+import { Card, Bonus, GrimoireCardDefinition, GrimoireDefinition } from "../../apiType"
 
-export default function FullCard(props: Props): JSX.Element {
-  const grimoireCardDefinition: GrimoireCardDefinition = frDefinition
-  const grimoireCardDefinitionEnglish: GrimoireCardDefinition = enDefinition
+export default function CardArticle(props: Props): JSX.Element {
+  const grimoireCardDefinition: GrimoireCardDefinition = frCardDefinition
+  const grimoireCardDefinitionEnglish: GrimoireCardDefinition = enCardDefinition
 
   const cardId = props.cardId
   const card = grimoireCardDefinition[cardId]
@@ -17,7 +16,6 @@ export default function FullCard(props: Props): JSX.Element {
   const bonus = getCardBonus(cardId, props.bonuses)
   return (
     <>
-      <p><Link to="/"><button>Retour à l'accueil</button></Link></p>
       <div style={cardImageStyle(card.normalResolution.image)}></div>
       <h3 dangerouslySetInnerHTML={{__html:card.cardName}}></h3>
       {card.cardIntro ?

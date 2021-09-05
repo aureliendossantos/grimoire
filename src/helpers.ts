@@ -1,4 +1,12 @@
-import { Bonus, Card, Image } from "./apiType"
+import { Bonus, Card, Image, Theme } from "./apiType"
+
+export function getNumberOfCardsInTheme(theme: Theme): number {
+  let number = 0
+  theme.pageCollection.map(page => {
+    number += page.cardBriefs.length
+  })
+  return number
+}
 
 export function getUserCardFromCollection(cardId: number | string, cardCollection: Array<Card>) {
   if (cardCollection) {

@@ -10,7 +10,7 @@ Currently, you can:
 
 - [x] Browse the entire Grimoire
 - [ ] Change the language (currently in French) (Note: I can then use `<div lang="fr">`)
-- [ ] Filter cards per collection (`Vanguard/Grimoire/Definition/`)
+- [x] Filter cards per collection (`Vanguard/Grimoire/Definition/`)
 - [x] Enter a PlayStation or Xbox username to see:
     - [x] Your total Grimoire score
     - [x] Your unlocked cards, and those you have left to unlock

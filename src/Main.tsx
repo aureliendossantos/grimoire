@@ -1,22 +1,20 @@
-import React, {useEffect, useState} from "react"
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import React, { Suspense, useEffect, useState } from "react"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import config from "../grimoire-config.json"
 
 import UserForm from "./components/UserForm"
-import Grimoire from './pages/Grimoire'
-import CardPage from './pages/CardPage'
 import Debug from './pages/Debug'
 import NotFound from './pages/NotFound'
+
+const Grimoire = React.lazy(() => import('./pages/Grimoire'))
+const CardPage = React.lazy(() => import('./pages/CardPage'))
 
 export default function Main():JSX.Element {
   const [username, setUsername] = useState("")
   const [platform, setPlatform] = useState("psn")
   const [accountID, setAccountID] = useState("")
-  const [showAdvanced, setShowAdvanced] = useState(false)
-  const [filter, setFilter] = useState("all")
-  const [grimoireDefinition, setGrimoireDefinition] = useState([])
-  const [myGrimoire, setMyGrimoire] = useState({
+  const [userGrimoire, setuserGrimoire] = useState({
     "score": 0,
     "cardCollection": [],
     "cardToHide": [],
@@ -47,7 +45,7 @@ export default function Main():JSX.Element {
         if (accountID != '') {
           const response = await fetch(host + 'Vanguard/Grimoire/2/' + accountID + '/', {headers: {'X-API-Key': config.apiKey}})
           const data = await response.json()
-          setMyGrimoire(data.Response.data)
+          setuserGrimoire(data.Response.data)
           setIsLoaded(true)
         }
       } catch (err) {
@@ -68,25 +66,15 @@ export default function Main():JSX.Element {
       />
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Grimoire
-              isLoaded={isLoaded}
-              myGrimoire={myGrimoire}
-              showAdvanced={showAdvanced}
-              filter={filter}
-              onShowAdvancedChange={(userInput) => {
-                setShowAdvanced(userInput)
-              }}
-              onFilterChange={(userInput) => {
-                setFilter(userInput)
-              }}
-            />
+          <Route path="/:themeId/:pageId/:cardId">
+            <Suspense fallback={<h3>Chargement...</h3>}>
+              <CardPage isLoaded={isLoaded} userGrimoire={userGrimoire} />
+            </Suspense>
           </Route>
-          <Route path="/card/*">
-            <CardPage
-              isLoaded={isLoaded}
-              myGrimoire={myGrimoire}
-            />
+          <Route path={["/:themeId/:pageId", "/:themeId", "/"]}>
+            <Suspense fallback={<h3>Chargement...</h3>}>
+              <Grimoire isLoaded={isLoaded} userGrimoire={userGrimoire} />
+            </Suspense>
           </Route>
           <Route path="/debug/">
             <Debug />

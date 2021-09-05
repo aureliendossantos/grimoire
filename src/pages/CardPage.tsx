@@ -1,26 +1,31 @@
 import React from "react"
-import FullCard from "../components/CardPage/FullCard"
-import { UserGrimoire } from "../apiType"
+import CardArticle from "../components/CardPage/CardArticle";
+import { UseParams, UserGrimoire } from "../apiType"
+import { useParams } from "react-router-dom";
+import DisplayPath from "../components/Grimoire/DisplayPath";
 
 export default function CardPage(props:Props) {
   // remove base (i.e. "/" or "/grimoire/") then "card/" from URL
-  const cardId = window.location.pathname.substring(import.meta.env.BASE_URL.length + 5)
+  let { cardId } = useParams<UseParams>()
 
   return (
     <>
-      <article className="grimoireCard">
-        <FullCard
-          cardId={cardId}
-          isLoaded={props.isLoaded}
-          cardCollection={props.myGrimoire.cardCollection}
-          bonuses={props.myGrimoire.bonuses}
-        />
-      </article>
+      <DisplayPath />
+      {cardId ?
+        <article className="grimoireCard">
+          <CardArticle
+            cardId={cardId}
+            isLoaded={props.isLoaded}
+            cardCollection={props.userGrimoire.cardCollection}
+            bonuses={props.userGrimoire.bonuses}
+          />
+        </article>
+      : null}
     </>
   )
 }
 
 interface Props {
   isLoaded: boolean
-  myGrimoire: UserGrimoire
+  userGrimoire: UserGrimoire
 }

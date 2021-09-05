@@ -1,3 +1,30 @@
+export interface GrimoireDefinition {
+  themeCollection: Array<Theme>
+}
+
+export interface Theme {
+  themeId: string
+  themeName: string
+  normalResolution: ImageGroup
+  highResolution: ImageGroup
+  pageCollection: Array<Page>
+}
+
+export interface Page {
+  pageId: string
+  pageName: string
+  normalResolution: ImageGroup
+  highResolution: ImageGroup
+  cardCollection: Array<CardDefinition>
+  cardBriefs: Array<CardBrief>
+}
+
+interface CardBrief {
+  cardId: number
+  points: number
+  totalPoints: number
+}
+
 export interface UserGrimoire {
   score: number
   cardCollection: Array<Card>
@@ -9,7 +36,7 @@ export interface GrimoireCardDefinition {
   [key: string]: CardDefinition
 }
 
-interface CardDefinition {
+export interface CardDefinition {
   cardId: number
   cardName: string
   cardIntro?: string
@@ -91,4 +118,12 @@ interface ImageFormat {
   y: number
   height: number
   width: number
+}
+
+/* React Router */
+
+export interface UseParams {
+  themeId?: string
+  pageId?: string
+  cardId?: string
 }
