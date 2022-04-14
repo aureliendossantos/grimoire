@@ -4,7 +4,15 @@ body {
     background-color: rgb(9, 10, 17);
     color: rgb(226, 226, 226);
     font-family: "Neue Haas Grotesk W01 Disp", "Neue Haas Grotesk", "Helvetica Neue", "Arial", sans-serif;
-    margin: 0.5em;
+    margin: 0.5em 1em;
+}
+
+h1 a, .path a {
+    text-decoration: none;
+}
+
+h2 {
+    font-size: large;
 }
 
 a {
@@ -24,13 +32,17 @@ ul.grimoire li {
     position: relative;
 }
 
+ul.advancedInfo li {
+    margin: 0;
+}
+
 ul.grimoire li div.content {
     padding: 10px 20px;
     align-self: flex-end;
     text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5), 0 0 0.1em rgba(0, 0, 0, 0.5);
 }
 
-ul.grimoire li div.content h3 {
+ul.grimoire li div.content h3, ul.advancedInfo {
     margin-bottom: 0.5em;
 }
 
@@ -192,4 +204,21 @@ details[open] > summary {
 
 details details[open] {
     background-color: rgb(9, 10, 17);
+}
+
+ul.rankCollection {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.path {
+    margin-top: 28px;
+}
+
+figure {
+    margin-left: 0;
+}
+
+figcaption {
+    margin-left: 40px;
 }

@@ -9,15 +9,15 @@ export default function Stats(props: Props) {
     <ul>
       {props.cardStats.map((stat, statIndex) => {
         return <li><b>{stat.statName}</b>
-          <ul>
+          <ul className="rankCollection">
             {stat.rankCollection ?
               stat.rankCollection.map((rank, rankIndex) => {
                 return <li>
+                  {userStats && "rankCollection" in userStats[statIndex] && rankIndex in userStats[statIndex].rankCollection ? "✔️ " : "❌ "}
                   {userStats && statIndex in userStats ?
                     userStats[statIndex].displayValue + "/"
                   : null}
                   {rank.threshold}, {rank.points} points
-                  {userStats && "rankCollection" in userStats[statIndex] && rankIndex in userStats[statIndex].rankCollection ? "✔️" : "❌"}
                 </li>
               })
             : <li>

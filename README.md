@@ -32,7 +32,7 @@ Maybe one day I'll add a Quest explorer. They contain lore too, and there is no 
 
 ## Installation
 
-1. Install [Yarn](https://yarnpkg.com/getting-started/install) and [Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+1. Install [Yarn](https://yarnpkg.com/getting-started/install).
 2. Get the dependencies with `yarn install` in the project folder.
 3. **Get an API key from Bungie:** log in on [bungie.net](https://www.bungie.net/) then go to [bungie.net/en/Application](https://www.bungie.net/en/Application) (you must be logged in for this link to work).
     - **To use you key locally:** make a copy of `grimoire-config-sample.json` and name the new file `grimoire-config.json`. Put your API key in it. This file will be ignored by git and won't be sent on GitHub.

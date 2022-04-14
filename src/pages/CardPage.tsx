@@ -10,7 +10,7 @@ export default function CardPage(props:Props) {
 
   return (
     <>
-      <DisplayPath />
+      {/*<DisplayPath />*/}
       {cardId ?
         <article className="grimoireCard">
           <CardArticle

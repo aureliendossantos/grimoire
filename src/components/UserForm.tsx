@@ -17,15 +17,15 @@ export default function UserForm(props:Props):JSX.Element {
             setPlatform(event.target.value)
           }}
         />
-        <label htmlFor="psn">PSN</label>
-        <input
+        <label htmlFor="psn">PSN</label>
+        <input
           type="radio" name="platform" id="xbox" value="xbox"
           checked={platform == "xbox"}
           onChange={(event) => {
             setPlatform(event.target.value)
           }}
         />
-        <label htmlFor="xbox">Xbox</label>
+        <label htmlFor="xbox">Xbox</label>
       </div>
       <input
         type="text"

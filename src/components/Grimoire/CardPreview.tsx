@@ -14,15 +14,15 @@ export default function CardPreview(props: Props): JSX.Element {
         <Link to={"/Unknown/Unknown/" + card.cardId}> </Link>
         <div className="content">
           <h3 dangerouslySetInnerHTML={{__html:card.cardName}}></h3>
+          {props.showAdvanced ?
+          <AdvancedInfo
+            card={card}
+            userCard={getUserCardFromCollection(props.cardId, props.cardCollection)}
+            bonus={getCardBonus(props.cardId, props.bonuses)}
+          />
+        : null}
         </div>
       </li>
-      {props.showAdvanced ?
-        <AdvancedInfo
-          card={card}
-          userCard={getUserCardFromCollection(props.cardId, props.cardCollection)}
-          bonus={getCardBonus(props.cardId, props.bonuses)}
-        />
-      : null}
     </div>
   )
 }

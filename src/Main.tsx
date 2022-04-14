@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import config from "../grimoire-config.json"
@@ -56,6 +57,11 @@ export default function Main():JSX.Element {
 
   return (
     <div>
+      <Router>
+      <h1><Link to="/">Grimoire Explorer</Link></h1>
+      {isLoaded ?
+        <h2>Utilisateur : {username} ({userGrimoire.score} points)</h2>
+      : <h2>Utilisateur</h2>}
       <UserForm
         username={username}
         platform={platform}
@@ -64,7 +70,7 @@ export default function Main():JSX.Element {
           setPlatform(platform)
         }}
       />
-      <Router>
+      
         <Switch>
           <Route path="/:themeId/:pageId/:cardId">
             <Suspense fallback={<h3>Chargement...</h3>}>

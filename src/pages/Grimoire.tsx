@@ -17,9 +17,7 @@ export default function Grimoire(props:Props):JSX.Element {
 
   return (
     <>
-      {props.isLoaded ?
-        <h3>Score : {props.userGrimoire.score} points</h3>
-      : <h3>Entrez un pseudo</h3>}
+      <h2>Navigateur</h2>
       <Filters
         view={view}
         showAdvanced={showAdvanced}

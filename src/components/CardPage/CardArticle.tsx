@@ -16,8 +16,8 @@ export default function CardArticle(props: Props): JSX.Element {
   const bonus = getCardBonus(cardId, props.bonuses)
   return (
     <>
+      <h2 dangerouslySetInnerHTML={{__html:card.cardName}}></h2>
       <div style={cardImageStyle(card.normalResolution.image)}></div>
-      <h3 dangerouslySetInnerHTML={{__html:card.cardName}}></h3>
       {card.cardIntro ?
         <figure>
           <blockquote>
@@ -30,7 +30,11 @@ export default function CardArticle(props: Props): JSX.Element {
       : null}
       {userCard ?
         <p>
-          <b>Obtenue.</b> Score : {userCard.score}, Points : {userCard.points}
+          <b>Obtenue.</b> Points : {userCard.score}
+          {userCard.score - userCard.points == 0 ?
+            null
+            : " (" + userCard.points + " + " + (userCard.score - userCard.points) + ")"
+          }
         </p>
       : <p>
           <b>Non obtenue.</b> {card.points > 0 ? <>Donne {card.points} points.</> : "Ne donne pas de points."}
