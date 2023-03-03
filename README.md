@@ -27,6 +27,8 @@ Currently, you can:
     - [ ] Add a favicon
     - [ ] Add meta tags to `<head>`
 - [ ] Handle errors when the user/card ID is wrong
+- [ ] Separate the Grimoire list in a sub-component so that navigation options in useEffect are remembered
+- [ ] Add the username and console ID (1 or 2) in the URL so the link can be shared
 
 Maybe one day I'll add a Quest explorer. They contain lore too, and there is no way in the game to check if you've already done a quest nor if there are any left hidden somewhere. I haven't yet determined the feasibility of this idea.
 
