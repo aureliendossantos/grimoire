@@ -1,224 +1,242 @@
-@import url('https://fast.fonts.net/cssapi/7ee163eb-2a40-46c5-b504-957fa48df1c8.css');
+@import url("https://fast.fonts.net/cssapi/7ee163eb-2a40-46c5-b504-957fa48df1c8.css");
 
 body {
-    background-color: rgb(9, 10, 17);
-    color: rgb(226, 226, 226);
-    font-family: "Neue Haas Grotesk W01 Disp", "Neue Haas Grotesk", "Helvetica Neue", "Arial", sans-serif;
-    margin: 0.5em 1em;
+  background-color: rgb(9, 10, 17);
+  color: rgb(226, 226, 226);
+  font-family: "Neue Haas Grotesk W01 Disp", "Neue Haas Grotesk",
+    "Helvetica Neue", "Arial", sans-serif;
+  margin: 0.5em 1em;
 }
 
-h1 a, .path a {
-    text-decoration: none;
+h1 a,
+.path a {
+  text-decoration: none;
 }
 
 h2 {
-    font-size: large;
+  font-size: large;
 }
 
 a {
-    color: inherit
+  color: inherit;
+}
+
+article {
+  max-width: 65ch;
+}
+
+article p {
+  line-height: 1.35;
 }
 
 ul.grimoire {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
 }
 
 ul.grimoire li {
-    list-style: none;
-    margin: 3px;
-    display: flex;
-    position: relative;
+  list-style: none;
+  margin: 3px;
+  display: flex;
+  position: relative;
 }
 
 ul.advancedInfo li {
-    margin: 0;
+  margin: 0;
 }
 
 ul.grimoire li div.content {
-    padding: 10px 20px;
-    align-self: flex-end;
-    text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5), 0 0 0.1em rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  align-self: flex-end;
+  text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5), 0 0 0.1em rgba(0, 0, 0, 0.5);
 }
 
-ul.grimoire li div.content h3, ul.advancedInfo {
-    margin-bottom: 0.5em;
+ul.grimoire li div.content h3,
+ul.advancedInfo {
+  margin-bottom: 0.5em;
 }
 
 ul.grimoire li div.content p {
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 
 ul.grimoire li div.content ul {
-    padding: 0;
+  padding: 0;
 }
 
 ul.grimoire li div.content ul {
-    padding: 0;
+  padding: 0;
 }
 
 ul.grimoire li {
-    z-index: 1;
+  z-index: 1;
 }
 
 ul.grimoire li a::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: " ";
 }
 
 .unlockHowToText {
-    font-style: italic;
+  font-style: italic;
 }
 
-input[type=text] {
-    background-color: rgb(32, 38, 58);
-    color: rgb(226, 226, 226);
-    border: none;
-    border-radius: 4px;
-    outline: transparent;
-    padding: 0.6em 0.7em;
-    margin: 0 0.5em;
-    font-size: 0.9em;
-    width: 9em;
+input[type="text"] {
+  background-color: rgb(32, 38, 58);
+  color: rgb(226, 226, 226);
+  border: none;
+  border-radius: 4px;
+  outline: transparent;
+  padding: 0.6em 0.7em;
+  margin: 0 0.5em;
+  font-size: 0.9em;
+  width: 9em;
 }
 
-input[type=text]::placeholder {
-    color: rgb(104, 108, 122);
+input[type="text"]::placeholder {
+  color: rgb(104, 108, 122);
 }
 
-input[type=text]:focus {
-    background-color: rgb(206, 210, 224);
-    color: black;
+input[type="text"]:focus {
+  background-color: rgb(206, 210, 224);
+  color: black;
 }
 
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 0.6em 0.7em;
-    margin-right: 0.5em;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.6em 0.7em;
+  margin-right: 0.5em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
 }
 
-input[type=submit]:hover {
-    background-color: #45a049;
+input[type="submit"]:hover {
+  background-color: #45a049;
 }
 
 .radio {
-    display: inline-block;
+  display: inline-block;
 }
 
-.radio input[type=radio], input[type=checkbox] {
-    display: none;
+.radio input[type="radio"],
+input[type="checkbox"] {
+  display: none;
 }
 
-.radio label, input[type=checkbox] + label, button {
-    background-color: rgb(32, 38, 58);
-    padding: 0.5em 0.7em;
+.radio label,
+input[type="checkbox"] + label,
+button {
+  background-color: rgb(32, 38, 58);
+  padding: 0.5em 0.7em;
 }
 
-input[type=checkbox] + label, button {
-    margin-right: 0.5em;
-    border-radius: 4px;
+input[type="checkbox"] + label,
+button {
+  margin-right: 0.5em;
+  border-radius: 4px;
 }
 
 button {
-    border: none;
-    font-size: inherit;
-    color: rgb(226, 226, 226);
+  border: none;
+  font-size: inherit;
+  color: rgb(226, 226, 226);
 }
 
 .radio label:first-of-type {
-    border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
 }
 
 .radio label:last-of-type {
-    border-radius: 0 4px 4px 0;
-    margin-right: 0.5em;
+  border-radius: 0 4px 4px 0;
+  margin-right: 0.5em;
 }
 
-.radio input:not(:checked) + label:hover, input[type=checkbox] + label:hover, button:hover {
-    background-color: rgb(38, 45, 65);
+.radio input:not(:checked) + label:hover,
+input[type="checkbox"] + label:hover,
+button:hover {
+  background-color: rgb(38, 45, 65);
 }
 
 .radio input:checked + label {
-    background-color: rgb(51, 59, 83);
+  background-color: rgb(51, 59, 83);
 }
 
-input[type=checkbox]:checked + label {
-    background-color: #37a03c;
+input[type="checkbox"]:checked + label {
+  background-color: #37a03c;
 }
 
 table {
-    border-collapse: collapse;
-    border-radius: 4px;
-    background-color: rgb(51, 59, 83);
+  border-collapse: collapse;
+  border-radius: 4px;
+  background-color: rgb(51, 59, 83);
 }
-th, td {
-    text-align: left;
-    padding: 0.5em;
+th,
+td {
+  text-align: left;
+  padding: 0.5em;
 }
 
 td.link {
-    position: relative;
-    background-color: rgb(32, 38, 58);
+  position: relative;
+  background-color: rgb(32, 38, 58);
 }
 
 td.link a::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: " ";
 }
 
 details {
-    background-color: rgb(32, 38, 58);
-    border-radius: 4px;
-    padding: .5em .5em 0;
-    margin-bottom: .5em;
+  background-color: rgb(32, 38, 58);
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+  margin-bottom: 0.5em;
 }
 
 summary {
-    font-weight: bold;
-    margin: -.5em -.5em 0;
-    padding: .5em;
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
 }
 
 details[open] {
-    padding: .5em;
+  padding: 0.5em;
 }
 
 details[open] > summary {
-    margin-bottom: .5em;
-    background-color: rgb(38, 65, 61);
+  margin-bottom: 0.5em;
+  background-color: rgb(38, 65, 61);
 }
 
 details details[open] {
-    background-color: rgb(9, 10, 17);
+  background-color: rgb(9, 10, 17);
 }
 
 ul.rankCollection {
-    list-style-type: none;
-    padding-left: 20px;
+  list-style-type: none;
+  padding-left: 20px;
 }
 
 .path {
-    margin-top: 28px;
+  margin-top: 28px;
 }
 
 figure {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 figcaption {
-    margin-left: 40px;
+  margin-left: 40px;
 }
